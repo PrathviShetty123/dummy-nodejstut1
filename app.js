@@ -481,8 +481,46 @@ console.log(newItems);          //op: [ 1, 2, 3, 4 ]
 
 // 14) Share Code
 /*
-- Create a repo in github
+* Setting up Remote URL
+1. Create a repo in github
+2. Create a new file: gitignore 
+[NOTE: Place node_modules in gitignore, so it will be ignored by source control & it won't be pushing up to the folder in the github, since there is no ue of this]
+[- gitignore -> a file that specifies which files are going to be ignored by the source control]
+3. In terminal:
+  -  git init
+  -  git add .
+  -  git commit -m "first commit"
+  -  git remote add origin https://github.com/PrathviShetty123/dummy-nodejstut1.git
+     git branch -M main
+     git push -u origin main
+git remote add origin https://github.com/PrathviShetty123/dummy-nodejstut1.git
+git branch -M main
+git push -u origin main
+[ NOTE: To resolve 'remote: Permission to PrathviShetty123/dummy-nodejstut1.git denied to Prathvi-P-Shetty.
+fatal: unable to access 'https://github.com/PrathviShetty123/dummy-nodejstut1.git/': The requested URL returned error: 403'
+Soln:
+In terminal:
+>> git config user.name "PrathviShetty123"
+   git config user.email "prathvipshetty123@gmail.com"
+>> git remote set-url origin https://PrathviShetty123@github.com/PrathviShetty123/dummy-nodejstut1.git
+In github account:
+Go to your GitHub account → Settings → Developer settings → Personal Access Tokens → Tokens (classic)
+Copy the token
+In terminal:
+>> git push -u origin main
+]
 
+- Now we get a repo: https://github.com/PrathviShetty123/dummy-nodejstut1
+
+- Issue:
+Since the dependencies are found in node_modules, but we didn't push node_modules in our repo
+Sol: Since we have package.json, after downloading the code from github repo, if we just type 'npm install' in our terminal, the npm will check the dependencies in package.json & will automatically install them
+
+NOTE: 
+- While sharing code, we won't share node_modules folder (bcz: the size of node_modules are too large)
+- Instead when we clone the repo / share the code, we have package.json (bcz: we can just share the code without dragging the massive node_modules folder with us, it provides what package we are using & once we type 'npm install' in terminal, it will install all the packages that are in dependencies)
 */
 
+/* -------------------------------------------------------------------- */
 
+// 15)
